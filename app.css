@@ -1,0 +1,235 @@
+:root {
+    --header-height: 50px;
+    --footer-height: 80px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    margin: 0 auto;
+    max-width: 768px;
+    font-family: 'Sniglet', cursive;
+    background-color: #fff;
+}
+
+.wrapper { 
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+.canvas {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+}
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #00cc55, #007ACC);
+    text-align: center;
+    margin: 0;
+    flex: 0 0 auto;
+    position: relative;
+    box-shadow: 0px 4px 5px #000000;
+}
+
+.header-title {
+    margin-left: 50px;
+    font-weight: normal;
+}
+
+.popup-button {
+    margin-right: 50px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(#222222, #777777);
+    border: 2px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popup-button__span {
+    height: 2px;
+    width: 20px;
+    display: block;
+    transform: translate(3px, 13px);
+    background-color: orange;
+    position: relative;
+}
+.popup-button__span::before, 
+.popup-button__span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-radius: 4px;
+    background-color: orange;
+    height: 2px;
+    width: 20px;
+}
+.popup-button__span::before {
+    transform: translateY(-6px);
+}
+.popup-button__span::after { 
+   transform: translateY(6px);
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 84px;
+    width: 136px;
+    height: 90px;
+    color: orange;
+    border-radius: 4px;
+    background: linear-gradient(45deg, #222222, #777777);
+    text-align: center;
+}
+.popup-active {
+    display: block;
+}
+
+.popup-title {
+    margin: 5px;
+    font-weight: normal;
+}
+
+
+.main {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    background: linear-gradient(90deg, #A817E1, #1E8BD3);
+    /* height: calc(100vh - var(--header-height) - var( --footer-height)); */
+}
+
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-wrapper > p {
+   margin: 10px;
+}
+
+.btn-audio {
+    border:none;
+    outline: none;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    font-family: 'Sniglet', cursive;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 4px #000000;
+    transition: all 0.3s;
+    margin-bottom: 5px;
+}
+
+
+.btn-active { 
+    /* transform: scale(1.05,1.05); */
+    border: 4px solid #aaaa00; 
+}
+
+.command-logo {
+  margin: 0;
+}
+
+.btn-audio:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.footer {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222222;
+    background: linear-gradient(45deg, #4c4c4c, #222222);
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 5px 0 0 0;
+}
+
+.footer-logo {
+   margin: 0px;
+   font-weight: normal;
+}
+
+/*.user-wrapper {
+    display: none;
+}*/
+.active {
+    display: block;
+}
+
+.user-wrapper {
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+.user-title {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.user-title,
+.question-title {
+    margin: 3px;
+}
+.user-data {
+    margin: 5px auto;
+    padding: 5px 0px;
+    font-size: 20px;
+}
+.question-title {
+    font-weight: normal;
+}
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.btn {
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, #333333, #ff3399);
+    border-radius: 4px;
+    font-size: 18px;
+    width: 40px;
+    height: 25px;
+    box-shadow: 2px 2px 4px #000000;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+    .header-title {
+      font-size: 20px;
+    }
+    .footer-logo { 
+      font-size: 18px;
+    }
+}
